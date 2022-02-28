@@ -1,0 +1,1 @@
+export const SET_USER = 'Set the logged in user to be the current user';
