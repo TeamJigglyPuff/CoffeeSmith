@@ -1,4 +1,5 @@
 const express = require('express');
+const apiRouter = require('./routes/api')
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * define route handlers
  */
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
