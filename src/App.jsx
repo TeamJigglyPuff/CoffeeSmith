@@ -23,15 +23,17 @@ function mapDispatchToProps(dispatch){
 }
 
 const App = () => {
-  <div>
-    <Router>
-      <h1>Welcome to CoffeeSmith</h1>
-      <Routes>
-        <Route>
-        </Route>
-      </Routes>
-    </Router>
-  </div>
+  return (
+    <div>
+      <Router>
+        <h1>Welcome to CoffeeSmith</h1>
+        <Routes>
+          <Route>
+          </Route>
+        </Routes>
+      </Router>
+    </div>
+  )
 }
 
 export default connect()(App);
