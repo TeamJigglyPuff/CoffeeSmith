@@ -1,12 +1,12 @@
 const express = require('express');
 const apiRouter = require('./routes/api')
-
+const cors = require('cors');
 const app = express();
 
 // const apiRouter = require('./routes/api');
 
 const PORT = 3000;
-
+app.use(cors());
 /**
  * handle parsing request body
  */
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
 /**
  * start server
  */
- app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
 });
 
