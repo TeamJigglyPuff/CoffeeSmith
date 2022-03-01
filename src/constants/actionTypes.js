@@ -1,1 +1,1 @@
-export const SET_USER = 'Set the logged in user to be the current user';
+export const GET_ALL_COFFEES = 'Get all of the coffees in the DB';

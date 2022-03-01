@@ -1,10 +1,9 @@
 import { combineReducers } from "redux";
-import reducer from "./reducer";
+import coffeesReducer from "./coffeesReducer";
 
-import workoutsReducer from './reducer';
 
 const reducers = combineReducers({
-  reducer: reducer,
+  coffees: coffeesReducer,
 });
 
 export default reducers;
