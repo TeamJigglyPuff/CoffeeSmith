@@ -1,9 +1,39 @@
 import React from "react";
+import {
+  Link,
+  HashRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import { connect } from 'react-redux'
+import * as types from './constants/actionTypes'
 
-const App = () => {
-  <div>
-    <h1>Welcome to CoffeeSmith</h1>
-  </div>
+function mapStateToProps(state){
+  return {
+    currentUser: state.currentUser
+  }
 }
 
-export default App;
+function mapDispatchToProps(dispatch){
+  return {
+    setUser: (userObj) => {
+      dispatch({type: types.SET_USER, payload: userObj})
+    }
+  }
+}
+
+const App = () => {
+  return (
+    <div>
+      <Router>
+        <h1>Welcome to CoffeeSmith</h1>
+        <Routes>
+          <Route>
+          </Route>
+        </Routes>
+      </Router>
+    </div>
+  )
+}
+
+export default connect()(App);
