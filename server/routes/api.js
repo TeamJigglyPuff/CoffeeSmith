@@ -3,8 +3,16 @@ const { verifyToken } = require("../middleware/auth");
 
 const usersController = require('../controllers/usersController');
 const coffeeController = require('../controllers/coffeeController');
+const orderController = require('../controllers/orderController');
 
 const router = express.Router();
+
+router.post("/order",
+  orderController.addOrder,
+  (req, res) => {
+    return res.status(200).json(res.locals.order);
+  }
+)
 
 router.get("/users",
   verifyToken,
@@ -31,7 +39,7 @@ router.get('/',
   verifyToken,
   coffeeController.getAllCoffee,
   (req, res) => {
-    return res.status(200).json(res.locals);
+    return res.status(200).json(res.locals.coffees);
   }
 );
 
