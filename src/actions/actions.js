@@ -14,3 +14,8 @@ export const fetchAllCoffeesActionCreator = dispatch => {
       console.log(err);
     })
 }
+
+export const addCoffeeToCartActionCreator = coffeeToAdd => ({
+  type: types.ADD_TO_CART,
+  payload: coffeeToAdd
+})

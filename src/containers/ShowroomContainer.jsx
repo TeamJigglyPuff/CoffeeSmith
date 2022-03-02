@@ -1,10 +1,11 @@
 import React from "react";
 import { connect, useSelector, useDispatch } from 'react-redux';
 import * as actions from '../actions/actions';
+import CartDisplay from "../Components/CartDisplay";
 import ShowroomDisplay from '../Components/ShowroomDisplay.jsx'
 
 
-function ShowroomContainer() {
+const ShowroomContainer = () => {
   const dispatch = useDispatch();
   //dispatches:
   const fetchCoffees = () => actions.fetchAllCoffeesActionCreator(dispatch);
@@ -12,7 +13,10 @@ function ShowroomContainer() {
   const coffeesList = useSelector((state) => state.coffees.coffeesList)
 
   return (
-    <ShowroomDisplay fetchCoffees={fetchCoffees} coffeesList={coffeesList} />
+    <div>
+      <ShowroomDisplay fetchCoffees={fetchCoffees} coffeesList={coffeesList} />
+      <CartDisplay />
+    </div>
   )
 }
 
